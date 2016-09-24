@@ -6,9 +6,9 @@ SOURCE = $(SRC_COMMON) $(TARGET)_main.cpp
 SOURCE_UT = $(SRC_COMMON) $(TARGET_UT)Main.cpp
 
 CXX = g++
-FLAGS_DEBUG = -std=c++11 -Wall -g -o $(TARGET)
-FLAGS_BUILD = -std=c++11 -Wall -O3 -o $(TARGET)
-FLAGS_UT  = -std=c++11 -Wall -o $(TARGET_UT) -lgtest -lpthread
+FLAGS_DEBUG = -Wall -g -o $(TARGET)
+FLAGS_BUILD = -Wall -O3 -o $(TARGET)
+FLAGS_UT  = -Wall -o $(TARGET_UT) -lgtest -lpthread
 
 build : $(SOURCE)
 	$(CXX) $(SOURCE) $(FLAGS_BUILD)
