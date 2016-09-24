@@ -1,0 +1,12 @@
+language: cpp
+compiler:
+    - g++
+notifications:
+    email:
+        recipients:
+            - gdyxgzy@hotmail.com
+        on_success: always
+        on_failure: always
+script: make && make test
+    
+    
