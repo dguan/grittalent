@@ -1,11 +1,17 @@
 #include <gtest/gtest.h>
 #include "gritTest.h"
 
-static vector<Record> data = {{"BUNDY", "TERESSA", "88"}, {"SMITH", "ALLAN", "70"}, {"KING", "MADISON", "88"}, {"SMITH", "FRANCIS", "85"}};
+//static vector<Record> data = {{"BUNDY", "TERESSA", "88"}, {"SMITH", "ALLAN", "70"}, {"KING", "MADISON", "88"}, {"SMITH", "FRANCIS", "85"}};
+static vector<Record> data;
 
 bool testSorting()
 {
-	SortRecord(data, sortingFunc);
+	data.push_back(Record("BUNDY", "TERESSA", "88"));
+	data.push_back(Record("SMITH", "ALLAN", "70"));
+	data.push_back(Record("KING", "MADISON", "88"));
+	data.push_back(Record("SMITH", "FRANCIS", "85"));
+	
+	SortRecord(data, sortingFunc());
 	
 	for(unsigned int idx=1; idx < data.size(); ++idx)
 	{
