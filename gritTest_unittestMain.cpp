@@ -11,7 +11,8 @@ bool testSorting()
 	data.push_back(Record("KING", "MADISON", "88"));
 	data.push_back(Record("SMITH", "FRANCIS", "85"));
 	
-	SortRecord(data, sortingFunc());
+	//SortRecord(data, sortingFunc);
+	SortRecord(data);
 	
 	for(unsigned int idx=1; idx < data.size(); ++idx)
 	{
