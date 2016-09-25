@@ -28,11 +28,14 @@ int main(int argc, char *argv[])
 	}
 	
 	// Sort records using pre-defined sorting function
-	SortRecord(records, sortingFunc);
+	//SortRecord(records, sortingFunc);
+	SortRecord(records);
 
 	// Print sorted records
-	for (auto& r : records)
-		cout << r.firstName << ',' << r.lastName << ',' << r.score << endl;
+	//for (auto& r : records)
+	//	cout << r.firstName << ',' << r.lastName << ',' << r.score << endl;
+	for(vector<Record>::const_iterator itr=records.begin(); itr!=records.end(); ++itr)
+		cout << itr->firstName << ',' << itr->lastName << ',' << itr->score << endl;
 
 	// construct output file name from inputfile's base name,
 	// if input file name is data1.xyz, output filename will be data1-graded.txt
