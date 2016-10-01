@@ -46,6 +46,28 @@ script: make && make test
 #    - GTEST_TARGET=googletest SHARED_LIB=OFF STATIC_LIB=ON CMAKE_PKG=OFF BUILD_TYPE=debug   VERBOSE_MAKE=true VERBOSE
 #    - GTEST_TARGET=googlemock SHARED_LIB=OFF STATIC_LIB=ON CMAKE_PKG=OFF BUILD_TYPE=debug   VERBOSE_MAKE=true VERBOSE
 #    - GTEST_TARGET=googlemock SHARED_LIB=OFF STATIC_LIB=ON CMAKE_PKG=OFF BUILD_TYPE=debug CXX_FLAGS=-std=c++11  VERBOSE_MAKE=true VERBOSE
+=======
+    - llvm-toolchain-precise-3.7
+    packages:
+    - gcc-4.9
+    - g++-4.9
+    - clang-3.7
+    - valgrind
+os:
+  - linux
+  - osx
+language: cpp
+compiler:
+  - gcc
+  - clang
+#script: ./travis.sh
+script: make && make test
+
+#env:
+#  matrix:
+#    - GTEST_TARGET=googletest SHARED_LIB=OFF STATIC_LIB=ON CMAKE_PKG=OFF BUILD_TYPE=debug   VERBOSE_MAKE=true VERBOSE
+#    - GTEST_TARGET=googlemock SHARED_LIB=OFF STATIC_LIB=ON CMAKE_PKG=OFF BUILD_TYPE=debug   VERBOSE_MAKE=true VERBOSE
+#    - GTEST_TARGET=googlemock SHARED_LIB=OFF STATIC_LIB=ON CMAKE_PKG=OFF BUILD_TYPE=debug CXX_FLAGS=-std=c++11  VERBOSE_MAKE=true VERBOSE
 #    - GTEST_TARGET=googletest SHARED_LIB=ON  STATIC_LIB=ON CMAKE_PKG=ON  BUILD_TYPE=release VERBOSE_MAKE=false
 #    - GTEST_TARGET=googlemock SHARED_LIB=ON  STATIC_LIB=ON CMAKE_PKG=ON  BUILD_TYPE=release VERBOSE_MAKE=false
 notifications:
