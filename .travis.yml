@@ -12,7 +12,7 @@ install:
 # /usr/bin/gcc is 4.6 always, but gcc-X.Y is available.
 - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9" CC="gcc-4.9"; fi
 # /usr/bin/clang is 3.4, lets override with modern one.
-- if [ "$CXX" = "clang++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="clang++-3.7" CC="clang-3.7"; fi
+#- if [ "$CXX" = "clang++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="clang++-3.7" CC="clang-3.7"; fi
 - echo ${PATH}
 - echo ${CXX}
 - ${CXX} --version
@@ -36,7 +36,7 @@ os:
   #- osx
 language: cpp
 compiler:
-  - gcc
+  - g++
   #- clang
 #script: ./travis.sh
 script: make && make test
@@ -46,20 +46,20 @@ script: make && make test
 #    - GTEST_TARGET=googletest SHARED_LIB=OFF STATIC_LIB=ON CMAKE_PKG=OFF BUILD_TYPE=debug   VERBOSE_MAKE=true VERBOSE
 #    - GTEST_TARGET=googlemock SHARED_LIB=OFF STATIC_LIB=ON CMAKE_PKG=OFF BUILD_TYPE=debug   VERBOSE_MAKE=true VERBOSE
 #    - GTEST_TARGET=googlemock SHARED_LIB=OFF STATIC_LIB=ON CMAKE_PKG=OFF BUILD_TYPE=debug CXX_FLAGS=-std=c++11  VERBOSE_MAKE=true VERBOSE
-=======
-    - llvm-toolchain-precise-3.7
+#=======
+    #- llvm-toolchain-precise-3.7
     packages:
     - gcc-4.9
     - g++-4.9
-    - clang-3.7
-    - valgrind
+    #- clang-3.7
+    #- valgrind
 os:
   - linux
-  - osx
+  #- osx
 language: cpp
 compiler:
-  - gcc
-  - clang
+  - g++
+  #- clang
 #script: ./travis.sh
 script: make && make test
 

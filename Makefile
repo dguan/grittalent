@@ -5,7 +5,7 @@ SRC_COMMON = $(TARGET).cpp $(TARGET).h
 SOURCE = $(SRC_COMMON) $(TARGET)_main.cpp
 SOURCE_UT = $(SRC_COMMON) $(TARGET_UT)Main.cpp
 
-#CXX = g++
+CXX = g++
 FLAGS_DEBUG = -Wall -g -o $(TARGET)
 FLAGS_BUILD = -Wall -O3 -o $(TARGET)
 FLAGS_UT  = -Wall -o $(TARGET_UT) -lgtest -lpthread
